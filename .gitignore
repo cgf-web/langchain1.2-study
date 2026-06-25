@@ -1,0 +1,59 @@
+# ========== Python 编译缓存 ==========
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ========== Conda / 虚拟环境（最重要，体积巨大） ==========
+# 你的conda环境文件夹，比如 langchain1.2/
+langchain1.2/
+*/venv/
+*/env/
+.venv/
+venv/
+*.env/
+.env
+
+# ========== PyCharm 配置缓存 ==========
+.idea/
+*.iml
+*.iws
+*.swp
+out/
+
+# ========== 系统文件 ==========
+.DS_Store
+Thumbs.db
+
+# ========== 日志、临时文件 ==========
+*.log
+logs/
+*.tmp
+*.bak
+
+# ========== 大模型权重、数据集（避免上传几十G文件） ==========
+*.bin
+*.gguf
+models/
+datasets/
+cache/
+.cache/
+
+# ========== 环境密钥文件（防止泄露API Key） ==========
+.env
