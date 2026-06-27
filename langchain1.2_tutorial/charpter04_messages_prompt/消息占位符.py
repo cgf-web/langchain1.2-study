@@ -113,3 +113,30 @@ FRIENDLY_ASSISTANT = ChatPromptTemplate.from_messages([
     ("system","你是一个友好的助手"),
     ("user","{input}")
 ])
+
+# 2.4.4 模板组合
+# 将多个模板片段组合成复杂的提示词。
+# 方法1:字符串组合
+#定义可复用的部分
+role_part ="你是一个{domain}专家。"
+style_part = "回答风格:{style}。"
+constraint_part = "限制:{constraint}."
+
+#组合
+full_system = role_part + style_part + constraint_part
+template = ChatPromptTemplate.from_messages([   #类的方法实例化了一个模板对象
+    ("system",full_system),
+    ("user","{question}")
+])
+
+#方法二：使用+运算符
+template1 = ChatPromptTemplate.from_messages([
+    ("system","你是助手")
+])
+template2 = ChatPromptTemplate.from_messages([
+    ("user","{input}")
+])
+#组合(LangChain1.0支持)
+combined = template1 + template2
+
+
